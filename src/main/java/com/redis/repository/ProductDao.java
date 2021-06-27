@@ -22,6 +22,7 @@ public class ProductDao {
 	}
 
 	public Product findById(int id) {
+		System.out.println("Fetching from Database, id = " + id);
 		return (Product) template.opsForHash().get(HASH_KEY, id);
 	}
 
@@ -33,5 +34,5 @@ public class ProductDao {
 		template.opsForHash().delete(HASH_KEY, id);
 		return "Product Deleted";
 	}
-	
+
 }
